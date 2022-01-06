@@ -1,0 +1,33 @@
+[data]
+ChipsPath = /xview3/all/chips/
+TrainScenePath = ../data/splits/xval1.txt
+ValScenePath = ../data/splits/xval2.txt
+Channels = vh,vv,bathymetry
+LoaderWorkers = 4
+SkipLowConfidence = False
+ClassMap = 1,2,3
+Transforms = CustomNormalize2
+TrainTransforms = Crop800,FlipLR,FlipUD
+BackgroundFrac = 0.5
+BboxSize = 20
+ValAllChips = True
+ClipBoxes = True
+AllChips = True
+BGBalancedSampler = True
+Span = 2
+
+[training]
+BatchSize = 4
+Model = frcnn_multihead_pseudo_softer
+NumberEpochs = 100
+SavePath = ../data/models/initial/
+Optimizer = reference
+LearningRate = 0.001
+ImageMean = 0.5,0.5,0.5
+ImageStd = 0.1,0.1,0.1
+Patience = 1
+Half = True
+SummaryFrequency = 65536
+EffectiveBatchSize = 64
+NoopTransform = True
+EMA = 0.995

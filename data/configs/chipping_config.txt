@@ -1,0 +1,14 @@
+[locations]
+ImageFolder = /xview3/all/images/
+ChipsPath = /xview3/all/chips/
+LabelFile = /xview3/all/labels.csv
+UseSceneList = False
+SceneList = cbe4ad26fe73f118t,e98ca5aba8849b06t
+
+[chip_params]
+ChipSize = 800
+Channels = vh,vv,bathymetry
+OverlapWidth = 0
+NumPreprocWorkers = 8
+IsDistributed = False
+OverwritePreprocessing = True

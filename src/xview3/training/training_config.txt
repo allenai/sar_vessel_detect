@@ -1,0 +1,30 @@
+[data]
+ChipsPath = /xview3/all/chips/
+TrainScenePath = /xview3/all/splits/mix-train-combined.txt
+ValScenePath = /xview3/all/splits/mix-xval2.txt
+Channels = vh,vv,bathymetry
+LoaderWorkers = 8
+Transforms = DefaultNormalize, MinMaxNormalize
+
+[training]
+IsDistributed = False
+NumberEpochs = 30
+BatchSize = 8
+Model = frcnn
+ImageMean = 0.5,0.5,0.5
+ImageStd = 0.1,0.1,0.1
+Backbone = resnet50
+Pretrained = True
+Pretrained-Backbone = True
+Trainable-Backbone-Layers = 5
+SavePath = /xview3/models/other/
+Coeff0 = 1
+Coeff1 = 1
+Coeff2 = 1
+Coeff3 = 1
+Coeff4 = 1
+AnchorSizes = 4,6,8,10,12
+AnchorRatios = 0.5,1.0,2.0
+
+[experiment]
+Debug = True
