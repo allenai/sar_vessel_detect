@@ -1,6 +1,7 @@
 # sar_vessel_detect
 
 Code for the AI2 Skylight team's submission in the xView3 competition (https://iuu.xview.us) for vessel detection in Sentinel-1 SAR images.
+See `whitepaper.pdf` for a summary of our approach.
 
 Dependencies
 ------------
